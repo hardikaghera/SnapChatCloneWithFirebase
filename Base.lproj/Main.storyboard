@@ -199,7 +199,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wyI-nG-Hpt" id="zeW-7n-Gxd">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -214,11 +214,52 @@
                     </view>
                     <connections>
                         <outlet property="contactsTableView" destination="qAh-58-I1F" id="6Ec-K3-D0G"/>
+                        <segue destination="A9m-dD-WRU" kind="show" identifier="ShowMessageVC" id="8AQ-R1-csR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFm-sT-ZrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="767" y="36"/>
+        </scene>
+        <!--Show MessageVC-->
+        <scene sceneID="rfv-wr-qWy">
+            <objects>
+                <viewController id="A9m-dD-WRU" customClass="ShowMessageVC" customModule="SnapChatCloneWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iv1-6f-xzQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xDd-Cu-6YE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5qh-dp-zCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCW-RO-C5t">
+                                <frame key="frameInset" minY="28" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="aiX-XD-hb5">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="QSD-4F-7a1">
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="A9m-dD-WRU" id="ktE-b6-5v9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HuD-sZ-25N">
+                                <frame key="frameInset" minY="72" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="HuD-sZ-25N" id="XC0-Ut-VfP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSI-MT-pnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1576.8" y="41.829085457271368"/>
         </scene>
     </scenes>
     <resources>
